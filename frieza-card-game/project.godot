@@ -11,8 +11,14 @@ config_version=5
 [application]
 
 config/name="Frieza card game"
+run/main_scene="res://scenes/menu.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+PlayerData="*res://scripts/player_data.gd"
+CardData="*res://scripts/card_data.gd"
 
 [rendering]
 

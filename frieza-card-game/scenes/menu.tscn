@@ -1,0 +1,46 @@
+[gd_scene load_steps=2 format=3 uid="uid://buplf561re2qv"]
+
+[ext_resource type="Script" path="res://scripts/menu.gd" id="1_yejto"]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+script = ExtResource("1_yejto")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.5
+offset_top = -68.0
+offset_right = 64.5
+offset_bottom = 68.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SpinBox" type="SpinBox" parent="VBoxContainer"]
+layout_mode = 2
+min_value = 2.0
+max_value = 5.0
+value = 2.0
+
+[node name="NamesContainer" type="VBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="LineEdit" type="LineEdit" parent="VBoxContainer/NamesContainer"]
+layout_mode = 2
+
+[node name="LineEdit2" type="LineEdit" parent="VBoxContainer/NamesContainer"]
+layout_mode = 2
+
+[node name="Start" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Lancer la partie"
+
+[connection signal="value_changed" from="VBoxContainer/SpinBox" to="." method="_on_player_count_changed"]
+[connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_button_pressed"]
