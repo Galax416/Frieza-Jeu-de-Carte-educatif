@@ -12,7 +12,7 @@ grow_vertical = 2
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 0
 offset_right = 91.0
-offset_bottom = 126.0
+offset_bottom = 150.0
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 0
@@ -26,10 +26,11 @@ expand_mode = 4
 clip_contents = true
 layout_direction = 1
 layout_mode = 1
-offset_top = 104.0
-offset_right = 94.0
-offset_bottom = 127.0
+offset_top = 98.0
+offset_right = 90.0
+offset_bottom = 126.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "exemple"
 horizontal_alignment = 1
 vertical_alignment = 1
+autowrap_mode = 2

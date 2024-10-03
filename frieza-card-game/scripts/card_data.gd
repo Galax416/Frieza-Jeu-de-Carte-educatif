@@ -3,7 +3,7 @@ extends Node
 var cards_data = {
 	"0": {"name": "Napoleon 1er", "texture": preload("res://asset/napoleon.png"), "date": 1769},
 	"1": {"name": "Cleopatre", "texture": preload("res://asset/cleopatre.png"), "date": -69},
-	"2": {"name": "Alexandre Le Grand", "texture": preload("res://asset/alexandre.png"), "date": -356},
+	"2": {"name": "Alexandre Le Grand", "texture": preload("res://asset/alexendre.png"), "date": -356},
 	"3": {"name": "Jules César", "texture": preload("res://asset/jules_cesar.png"), "date": -100},
 	"4": {"name": "Gengis Khan", "texture": preload("res://asset/gengis_khan.png"), "date": 1162},
 	"5": {"name": "Jeanne d'Arc", "texture": preload("res://asset/jeanne_darc.png"), "date": 1412},
@@ -15,6 +15,6 @@ var cards_data = {
 	"11": {"name": "Albert Einstein", "texture": preload("res://asset/albert_einstein.png"), "date": 1879},
 	"12": {"name": "Mahatma Gandhi", "texture": preload("res://asset/mahatma_gandhi.png"), "date": 1869},
 	"13": {"name": "Winston Churchill", "texture": preload("res://asset/winston_churchill.png"), "date": 1874},
-	"14": {"name": "Martin Luther King Jr.", "texture": preload("res://asset/martin_luther_king.png"), "date": 1929},
+	"14": {"name": "MLK Jr.", "texture": preload("res://asset/martin_luther_king.png"), "date": 1929},
 	"15": {"name": "Nelson Mandela", "texture": preload("res://asset/nelson_mandela.png"), "date": 1918}
 }

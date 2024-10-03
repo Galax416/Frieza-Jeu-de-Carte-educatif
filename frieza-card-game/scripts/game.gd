@@ -65,13 +65,14 @@ func _on_validate_card_pos_pressed() -> void:
 	if step==0:
 		$Label.text = "fdp"
 		clear($CardPos)
-		random_Card = randi_range(0, 1)
+		random_Card = randi_range(0, 15)
 		for player in players:
 			var card_instance = card_scene.instantiate()  # Create a card instance
 			var card_data = CardData.cards_data[str(random_Card)]  
 			card_instance.get_node("Label").text = card_data.name
 			card_instance.get_node("ColorRect").color = player.color
 			card_instance.get_node("TextureRect").texture = card_data.texture
+			adjust_label_font_size(card_instance.get_node("Label"))
 			card_instance.position = Vector2(100 * player.index+5, 50)  # Example positioning logic
 			$CardPos.add_child(card_instance)
 	elif step == 1:
@@ -83,3 +84,13 @@ func _on_validate_card_pos_pressed() -> void:
 	else :
 		$Label.text = "Réponse :"
 		print ("reponse + next turn")
+
+func adjust_label_font_size(label: Label) -> void:
+	var font = label.get_theme_font("font")
+	var max_font_size = 18  # Starting with the current font size
+	var target_width = label.get_rect().size.x  # The width of the Label itself
+
+	while label.get_minimum_size().x > target_width and max_font_size > 5:
+		max_font_size -= 1
+		font.size = max_font_size
+		label.add_theme_font("font", font)
