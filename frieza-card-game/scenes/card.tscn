@@ -2,11 +2,10 @@
 
 [node name="Card" type="Control"]
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_right = -1061.0
-offset_bottom = -523.0
+anchor_right = 0.082
+anchor_bottom = 0.196
+offset_right = -0.464005
+offset_bottom = -0.00800323
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -24,11 +23,13 @@ offset_bottom = 100.0
 expand_mode = 4
 
 [node name="Label" type="Label" parent="."]
+clip_contents = true
+layout_direction = 1
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = 98.0
-grow_horizontal = 2
-grow_vertical = 2
+offset_top = 104.0
+offset_right = 94.0
+offset_bottom = 127.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "exemple"
+horizontal_alignment = 1
+vertical_alignment = 1
