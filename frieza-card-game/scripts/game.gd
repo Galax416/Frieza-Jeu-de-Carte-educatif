@@ -35,10 +35,17 @@ func create_player_entry(player):
 	hboxPlayerNameContainer.add_child(name_label)
 	
 	# Afficher la couleur du joueur
-	var color_rect = ColorRect.new()
-	color_rect.color = player.color
-	color_rect.custom_minimum_size= Vector2(20, 20)  
-	hboxPlayerColorContainer.add_child(color_rect)
+	#var color_rect = ColorRect.new()
+	#color_rect.color = player.color
+	#color_rect.custom_minimum_size= Vector2(20, 20)  
+	#hboxPlayerColorContainer.add_child(color_rect)
+	
+	var texture_rect = TextureRect.new()
+	texture_rect.texture = player.background
+	texture_rect.custom_minimum_size= Vector2(22, 24)  
+	texture_rect.stretch_mode = TextureRect.STRETCH_TILE
+	texture_rect.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+	hboxPlayerColorContainer.add_child(texture_rect)
 	
 	# Afficher le score du joueur
 	var score_label = Label.new()
@@ -72,6 +79,7 @@ func _on_validate_card_pos_pressed() -> void:
 			card_instance.get_node("Label").text = card_data.name
 			card_instance.get_node("ColorRect").color = player.color
 			card_instance.get_node("TextureRect").texture = card_data.texture
+			card_instance.get_node("Background").texture = player.background
 			adjust_label_font_size(card_instance.get_node("Label"))
 			card_instance.position = Vector2(100 * player.index+5, 50)  # Example positioning logic
 			$CardPos.add_child(card_instance)
@@ -80,7 +88,7 @@ func _on_validate_card_pos_pressed() -> void:
 	elif step == 2 : 
 		$Label.text = "A vos changement"
 	else :
-		$Label.text = "Réponse :" #+ CardData.cards_data[str(random_Card)].date
+		$Label.text = "Réponse :" + str(CardData.cards_data[str(random_Card)].date)
 
 func adjust_label_font_size(label: Label) -> void:
 	var font = label.get_theme_font("font")
