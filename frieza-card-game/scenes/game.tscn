@@ -132,5 +132,56 @@ grow_vertical = 2
 size_flags_horizontal = 3
 color = Color(0.328952, 0.144451, 0.190881, 1)
 
+[node name="PlayZone" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -436.0
+offset_top = -190.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="6" type="ColorRect" parent="PlayZone"]
+offset_left = 600.0
+offset_right = 711.0
+offset_bottom = 112.0
+
+[node name="7" type="ColorRect" parent="PlayZone"]
+offset_left = 720.0
+offset_right = 831.0
+offset_bottom = 112.0
+
+[node name="4" type="ColorRect" parent="PlayZone"]
+offset_left = 360.0
+offset_right = 471.0
+offset_bottom = 112.0
+
+[node name="5" type="ColorRect" parent="PlayZone"]
+offset_left = 480.0
+offset_right = 591.0
+offset_bottom = 112.0
+
+[node name="3" type="ColorRect" parent="PlayZone"]
+offset_left = 240.0
+offset_right = 351.0
+offset_bottom = 112.0
+
+[node name="1" type="ColorRect" parent="PlayZone"]
+offset_right = 111.0
+offset_bottom = 112.0
+
+[node name="2" type="ColorRect" parent="PlayZone"]
+layout_mode = 0
+offset_left = 120.0
+offset_right = 231.0
+offset_bottom = 112.0
+
+[node name="Polygon2D" type="Polygon2D" parent="PlayZone"]
+position = Vector2(-15, -2)
+polygon = PackedVector2Array(943, 55, 856, -20, 855, 141)
+
 [connection signal="pressed" from="ReturnMenu" to="." method="_on_return_menu_pressed"]
 [connection signal="pressed" from="ValidateCardPos" to="." method="_on_validate_card_pos_pressed"]

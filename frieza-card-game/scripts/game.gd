@@ -63,7 +63,7 @@ func _on_validate_card_pos_pressed() -> void:
 	players = PlayerData.players
 	var player_list = $PlayerBoxColor/PlayerContainer
 	if step==0:
-		$Label.text = "fdp"
+		$Label.text = "Lets Start : placez vos cartes"
 		clear($CardPos)
 		random_Card = randi_range(0, 15)
 		for player in players:
@@ -77,13 +77,10 @@ func _on_validate_card_pos_pressed() -> void:
 			$CardPos.add_child(card_instance)
 	elif step == 1:
 		$Label.text = "Lets Debate !  :  Expliquez votre choix"
-		print("negociate")
 	elif step == 2 : 
 		$Label.text = "A vos changement"
-		print("changement")
 	else :
-		$Label.text = "Réponse :"
-		print ("reponse + next turn")
+		$Label.text = "Réponse :" #+ CardData.cards_data[str(random_Card)].date
 
 func adjust_label_font_size(label: Label) -> void:
 	var font = label.get_theme_font("font")
