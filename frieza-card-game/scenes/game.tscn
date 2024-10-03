@@ -16,10 +16,10 @@ layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 27.0
-offset_top = -111.0
+offset_left = 21.0
+offset_top = -13.0
 offset_right = 323.0
-offset_bottom = -77.0
+offset_bottom = 21.0
 grow_vertical = 2
 
 [node name="Color" type="ColorRect" parent="PlayerBoxColor"]
@@ -27,6 +27,7 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -8.0
 offset_bottom = -4.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -67,6 +68,8 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = -2.0
+offset_bottom = -2.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -101,4 +104,33 @@ grow_vertical = 2
 text = "Valider
 "
 
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -15.0
+offset_top = 21.0
+offset_right = 15.0
+offset_bottom = 44.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 25
+text = "test"
+
+[node name="Color" type="ColorRect" parent="Label"]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -13.0
+offset_top = 2.0
+offset_right = 13.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+color = Color(0.328952, 0.144451, 0.190881, 1)
+
 [connection signal="pressed" from="ReturnMenu" to="." method="_on_return_menu_pressed"]
+[connection signal="pressed" from="ValidateCardPos" to="." method="_on_validate_card_pos_pressed"]
