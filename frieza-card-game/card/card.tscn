@@ -9,12 +9,17 @@
 [ext_resource type="Script" path="res://card/state_machine/states/hover_card_state.gd" id="7_xjssr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gwet6"]
-size = Vector2(100, 150)
+size = Vector2(100, 153)
 
 [node name="Card" type="Control"]
 custom_minimum_size = Vector2(100, 150)
 layout_mode = 3
 anchors_preset = 0
+offset_top = 1.0
+offset_right = 102.0
+offset_bottom = 155.0
+grow_horizontal = 2
+grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 mouse_filter = 1
@@ -22,41 +27,45 @@ script = ExtResource("1_gelhr")
 metadata/_edit_use_anchors_ = true
 
 [node name="ColorRect" type="ColorRect" parent="."]
-visible = false
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+offset_right = 102.0
+offset_bottom = 154.0
 mouse_filter = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="Background" type="TextureRect" parent="."]
 layout_mode = 1
-offset_right = 100.0
-offset_bottom = 149.0
+offset_right = 102.0
+offset_bottom = 154.0
 expand_mode = 4
+metadata/_edit_use_anchors_ = true
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = 1.0
+offset_left = 5.0
 offset_top = 6.0
-offset_right = 97.0
+offset_right = 96.0
 offset_bottom = 111.0
 expand_mode = 4
+metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = -1
-offset_top = 122.0
-offset_right = 99.0
-offset_bottom = 150.0
+offset_left = -1.0
+offset_top = 115.0
+offset_right = 101.0
+offset_bottom = 154.0
 grow_horizontal = 2
 grow_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 4
 text = "State"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
 
 [node name="CardStateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
 script = ExtResource("2_vqdgh")
@@ -83,10 +92,11 @@ script = ExtResource("7_xjssr")
 card = NodePath("../..")
 
 [node name="DropPointDetector" type="Area2D" parent="."]
+visible = false
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DropPointDetector"]
-position = Vector2(50, 75)
+position = Vector2(51, 77)
 shape = SubResource("RectangleShape2D_gwet6")
 
 [node name="CardsDetector" type="Area2D" parent="."]
@@ -94,8 +104,14 @@ collision_layer = 4
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CardsDetector"]
-position = Vector2(50, 75)
+position = Vector2(51, 78)
 shape = SubResource("RectangleShape2D_gwet6")
+
+[node name="Owner" type="Label" parent="."]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
 
 [connection signal="gui_input" from="." to="." method="_on_gui_input"]
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
