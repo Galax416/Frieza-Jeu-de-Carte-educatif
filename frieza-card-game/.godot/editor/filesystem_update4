@@ -1,0 +1,16 @@
+res://example/example.tscn
+res://example.tscn
+res://card/card.tscn
+res://menu.tscn
+res://player_data.gd
+res://menu.gd
+res://game.tscn
+res://card/card.gd
+res://game.gd
+res://card/state_machine/states/clicked_card_state.gd
+res://card/state_machine/states/drag_card_state.gd
+res://card/state_machine/states/hover_card_state.gd
+res://card/state_machine/states/idle_card_state.gd
+res://card/state_machine/states/release_card_state.gd
+res://field/field.tscn
+res://field/field.gd
