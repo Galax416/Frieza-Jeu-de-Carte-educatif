@@ -1,0 +1,6 @@
+res://game.tscn
+res://menu.tscn
+res://card/card.tscn
+res://game.gd
+res://spin_box.gd
+res://menu.gd
