@@ -1,4 +1,5 @@
-res://menu.tscn
-res://card/card.tscn
 res://game.tscn
 res://game.gd
+res://menu.tscn
+res://card/card.tscn
+res://cardReponse.tscn

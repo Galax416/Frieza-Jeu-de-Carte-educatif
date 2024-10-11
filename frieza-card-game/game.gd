@@ -88,7 +88,7 @@ func _on_validate_card_pos_pressed() -> void:
 		var cards_holder: HBoxContainer = $CanvasLayer/Field/CardsHolder
 		var cards_field: Field = $CanvasLayer/Field
 		random_Card = randi_range(0, 15)
-		for child in $CardPos.get_children():
+		for child in $CanvasLayer/CardPos.get_children():
 			child.queue_free()
 		for card in cards_holder.get_children():
 			card.queue_free()
@@ -127,7 +127,7 @@ func adjust_label_font_size(label: Label) -> void:
 func calculate_score():
 	var correct_date = CardData.cards_data[str(random_Card)].date
 	var playzone_start = $"PlayZone/1".position.x  # Position pour -100
-	var playzone_end = $"PlayZone/20".position.x  # Position pour 2000
+	var playzone_end = $"PlayZone/22".position.x  # Position pour 2000
 	var timeline_start = -100
 	var timeline_end = 2000
 	var cards_holder: HBoxContainer = $CanvasLayer/Field/CardsHolder
@@ -161,19 +161,19 @@ func calculate_score():
 	var new_card = card_Response.instantiate()
 
 	# Calculer la position x de la carte en fonction de la date correcte
-# Lier la date (correct_date) à une position X sur la frise
+	# Lier la date (correct_date) à une position X sur la frise
 	var card_x_pos = lerp(playzone_start, playzone_end, float(correct_date  - timeline_start) / float(timeline_end - timeline_start))
-
 	# Placer la nouvelle carte à la position calculée
 	var card_width = new_card.get_rect().size.x
-	new_card.position = Vector2(card_x_pos + card_width/2.0 , $"PlayZone".position.y -50)  # Ajuster la position y si nécessaire
+	new_card.position = Vector2(card_x_pos , $"PlayZone".position.y -50)  # Ajuster la position y si nécessaire
 
 	# Définir les données de la nouvelle carte
 	var card_data = CardData.cards_data[str(random_Card)]
 	new_card.get_node("Label").text = card_data.name
 	new_card.get_node("TextureRect").texture = card_data.texture
 	new_card.get_node("Background").texture = reponse_background
-	$CardPos.add_child(new_card)
+	$CanvasLayer/CardPos.add_child(new_card)
+	new_card.z_index = RenderingServer.CANVAS_ITEM_Z_MAX
 
 	
 func update_player_score_in_container(player_name: String, new_score: int):
