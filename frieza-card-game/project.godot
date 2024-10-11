@@ -20,6 +20,11 @@ config/icon="res://icon.svg"
 PlayerData="*res://player_data.gd"
 CardData="*res://card_data.gd"
 
+[display]
+
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
+
 [input]
 
 mouse_left={

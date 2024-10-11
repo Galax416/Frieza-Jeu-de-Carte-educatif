@@ -88,6 +88,8 @@ func _on_validate_card_pos_pressed() -> void:
 		var cards_holder: HBoxContainer = $CanvasLayer/Field/CardsHolder
 		var cards_field: Field = $CanvasLayer/Field
 		random_Card = randi_range(0, 15)
+		for child in $CardPos.get_children():
+			child.queue_free()
 		for card in cards_holder.get_children():
 			card.queue_free()
 		for player in players:
@@ -164,14 +166,13 @@ func calculate_score():
 
 	# Placer la nouvelle carte à la position calculée
 	var card_width = new_card.get_rect().size.x
-	new_card.position = Vector2(card_x_pos + card_width , $"PlayZone".position.y -50)  # Ajuster la position y si nécessaire
+	new_card.position = Vector2(card_x_pos + card_width/2.0 , $"PlayZone".position.y -50)  # Ajuster la position y si nécessaire
 
 	# Définir les données de la nouvelle carte
 	var card_data = CardData.cards_data[str(random_Card)]
 	new_card.get_node("Label").text = card_data.name
 	new_card.get_node("TextureRect").texture = card_data.texture
 	new_card.get_node("Background").texture = reponse_background
-	
 	$CardPos.add_child(new_card)
 
 	
